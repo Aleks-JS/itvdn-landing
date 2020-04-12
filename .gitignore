@@ -1,3 +1,4 @@
 build/
+lessons/                
 node_modules/
-npm-debug.log
+npm-debug

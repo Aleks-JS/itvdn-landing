@@ -37,31 +37,34 @@ gulp.task("templates:compile", function buildHTML() {
 /*-----------------Styles compile--------------*/
 
 gulp.task("style:compile", function () {
-  return gulp
-    .src("source/styles/main.scss")
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false,
-      })
-    )
-    .pipe(rename("main.min.css"))
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("build/css"));
+  return (
+    gulp
+      .src("source/styles/main.scss")
+      .pipe(sourcemaps.init())
+      .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+      // .pipe(
+      //   autoprefixer({
+      //     browsers: ["last 2 versions"],
+      //     cascade: false,
+      //   })
+      // )
+      .pipe(rename("main.min.css"))
+      .pipe(sourcemaps.write("./"))
+      .pipe(gulp.dest("build/css"))
+  );
 });
 
 /*----------------Sprites---------------------*/
 
 gulp.task("sprite", function (cb) {
-  const spriteData = gulp.src("source/images/icons*.png").pipe(
+  const spriteData = gulp.src("source/images/icons/*.png").pipe(
     spritesmith({
       imgName: "sprite.png",
-      imgPath: "..images/sprite.png",
+      imgPath: "../images/sprite.png",
       cssName: "sprite.scss",
     })
   );
+
   spriteData.img.pipe(gulp.dest("build/images/"));
   spriteData.css.pipe(gulp.dest("source/styles/global/"));
   cb();

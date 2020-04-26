@@ -9,7 +9,7 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$book-name: "book";
+$book-name: 'book';
 $book-x: 0px;
 $book-y: 81px;
 $book-offset-x: 0px;
@@ -18,20 +18,9 @@ $book-width: 66px;
 $book-height: 79px;
 $book-total-width: 167px;
 $book-total-height: 160px;
-$book-image: "../images/sprite.png";
-$book: (
-  0px,
-  81px,
-  0px,
-  -81px,
-  66px,
-  79px,
-  167px,
-  160px,
-  "../images/sprite.png",
-  "book"
-);
-$like-name: "like";
+$book-image: '../images/sprite.png';
+$book: (0px, 81px, 0px, -81px, 66px, 79px, 167px, 160px, '../images/sprite.png', 'book', );
+$like-name: 'like';
 $like-x: 84px;
 $like-y: 0px;
 $like-offset-x: -84px;
@@ -40,20 +29,9 @@ $like-width: 83px;
 $like-height: 79px;
 $like-total-width: 167px;
 $like-total-height: 160px;
-$like-image: "../images/sprite.png";
-$like: (
-  84px,
-  0px,
-  -84px,
-  0px,
-  83px,
-  79px,
-  167px,
-  160px,
-  "../images/sprite.png",
-  "like"
-);
-$message-name: "message";
+$like-image: '../images/sprite.png';
+$like: (84px, 0px, -84px, 0px, 83px, 79px, 167px, 160px, '../images/sprite.png', 'like', );
+$message-name: 'message';
 $message-x: 0px;
 $message-y: 0px;
 $message-offset-x: 0px;
@@ -62,20 +40,9 @@ $message-width: 84px;
 $message-height: 81px;
 $message-total-width: 167px;
 $message-total-height: 160px;
-$message-image: "../images/sprite.png";
-$message: (
-  0px,
-  0px,
-  0px,
-  0px,
-  84px,
-  81px,
-  167px,
-  160px,
-  "../images/sprite.png",
-  "message"
-);
-$work-item-name: "work-item";
+$message-image: '../images/sprite.png';
+$message: (0px, 0px, 0px, 0px, 84px, 81px, 167px, 160px, '../images/sprite.png', 'message', );
+$work-item-name: 'work-item';
 $work-item-x: 66px;
 $work-item-y: 81px;
 $work-item-offset-x: -66px;
@@ -84,24 +51,13 @@ $work-item-width: 36px;
 $work-item-height: 37px;
 $work-item-total-width: 167px;
 $work-item-total-height: 160px;
-$work-item-image: "../images/sprite.png";
-$work-item: (
-  66px,
-  81px,
-  -66px,
-  -81px,
-  36px,
-  37px,
-  167px,
-  160px,
-  "../images/sprite.png",
-  "work-item"
-);
+$work-item-image: '../images/sprite.png';
+$work-item: (66px, 81px, -66px, -81px, 36px, 37px, 167px, 160px, '../images/sprite.png', 'work-item', );
 $spritesheet-width: 167px;
 $spritesheet-height: 160px;
-$spritesheet-image: "../images/sprite.png";
-$spritesheet-sprites: ($book, $like, $message, $work-item);
-$spritesheet: (167px, 160px, "../images/sprite.png", $spritesheet-sprites);
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($book, $like, $message, $work-item, );
+$spritesheet: (167px, 160px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -138,7 +94,7 @@ $spritesheet: (167px, 160px, "../images/sprite.png", $spritesheet-sprites);
 @mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x $sprite-offset-y;
+  background-position: $sprite-offset-x  $sprite-offset-y;
 }
 
 @mixin sprite-image($sprite) {

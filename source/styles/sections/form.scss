@@ -1,7 +1,11 @@
 .form-section {
-    padding: 100px 0 110px;
+    padding: 100px 0 110px 0;
     color: #fff;
     background-color: #1287bf;
+
+    @media (max-width: 810px) {
+        padding: 50px 0 55px 0;
+    }
 
     .title {
         margin-bottom: 12px;
@@ -41,6 +45,11 @@
         color: #828282;
         text-align: center;
         background-color: #fff;
+
+        @media (max-width: 810px) {
+            width: 90%;
+            padding: 25px;
+        }
 
         &-container {
             padding-top: 30px;
@@ -92,6 +101,10 @@
             border: 1px solid #d8d8d8;
             border-radius: 3px;
             font-size: 0.875rem;
+
+            @media (max-width: 480px) {
+                width: 95%;
+            }
 
             &:focus {
                 outline: 1px solid #1287bf;

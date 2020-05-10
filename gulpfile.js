@@ -60,7 +60,12 @@ gulp.task("style:compile", function () {
 
 gulp.task("js", function () {
   return gulp
-    .src(["source/js/form.js", "source/js/main.js"])
+    .src([
+      "source/js/init.js",
+      "source/js/form.js",
+      "source/js/validation.js",
+      "source/js/main.js",
+    ])
     .pipe(sourcemaps.init())
     .pipe(concat("main.min.js"))
     .pipe(uglify())

@@ -3,20 +3,18 @@
   var form = document.querySelector(".form-container");
   var clouseButton;
 
-  function onClose(e) {
-    console.log(e);
-    if (e.keyCode == 27 || "click") {
-      me.close();
-    }
+  function onClose() {
+    me.close();
     clouseButton.removeEventListener("click", onClose);
-    window.removeEventListener("keydown", onClose);
-    // if (e.keyCode == 27) {
-    //   me.close();
-    //   console.log(e);
-    // }
-    // me.close();
+    window.removeEventListener("keydown", onCloseKey);
+  }
 
-    // clouseButton.removeEventListener("click", onClose);
+  function onCloseKey(e) {
+    if (e.keyCode == 27) {
+      me.close();
+      clouseButton.removeEventListener("click", onClose);
+      window.removeEventListener("keydown", onCloseKey);
+    }
   }
 
   me.open = function () {
@@ -24,7 +22,7 @@
 
     clouseButton = document.querySelector(".form__close-button");
     clouseButton.addEventListener("click", onClose);
-    window.addEventListener("keydown", onClose);
+    window.addEventListener("keydown", onCloseKey);
   };
 
   me.close = function () {

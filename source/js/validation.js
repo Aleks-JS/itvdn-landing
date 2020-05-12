@@ -12,7 +12,10 @@
   };
 
   me.isNotEmpty = function (str) {
+    //возвращаем true или false по проверке str
     return !!str;
+    //более наглядный вариант
+    //return Bollean(str);
   };
 
   ITVDN.validation = me;
